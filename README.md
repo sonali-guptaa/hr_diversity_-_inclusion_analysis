@@ -30,38 +30,38 @@ Completed the Data transformation in Power Query and the dataset is then loaded 
 
 Diversity and Inclusion dataset contains `32 columns and 500 rows` of observation. Dataset includes columns like:
 
-Employee ID: Represents the unique number of the employee in the dataset
-Gender: Describes the gender of the employee
-Job Level after FY20 promotions: Describes the job level of the employee after being promoted in FY20
-New hire FY20?: Describes if the employee is a new hire in FY20
-FY20 Performance Rating: Represents the performance rating of the employee in FY20
-Promotion in FY21?: Describes if the employee is being promoted in FY21
-In base group for Promotion FY21: Describes if the employee is being selected for promoted in FY21
-Target hire balance	Describes the target hire balance of the employee
-FY20 leaver?: Describes if the employee is a leaver in FY20
-In base group for turnover FY20: Describes if the employee is in a group for turnover in FY20
-Department @01.07.2020: Describes the department each employee belongs to as at January 7, 2020
-Leaver FY: Describes if the employee is a leaver in a FY
-Job Level after FY21 promotions: Describes the job level of the employee after being promoted in FY21
-Last Department in FY20: Describes the last department each employee belongs in FY20
-FTE group: Describes if the employee belongs to a FTE group
-Time type: Describes the contract type employee
-Department & JL group PRA status: Describes the department and JL group PRA status of the employee
-Department & JL group for PRA: Describes the department and JL group PRA of the employee
-Job Level group PRA status: Describes the job level group PRA status of the employee
-Job Level group for PRA: Describes the job level group PRA of the employee
-Time in Job Level @01.07.2020: Describes the time in job level of the employee
-Job Level before FY20 promotions: Describes the job level employee before being promoted in FY20
-Promotion in FY20?: Describes if the employee is being promoted in FY20
-FY19 Performance Rating: Describes the performance rating of the employee in FY19
-Age group: Describes the age group of the employee
-Age @01.07.2020: Represents the age of the employee as at January 07, 2020
-Nationality 1: Describes the nationality of the employee in state level
-Region group: nationality 1	Describes the nationality of the employee in country level
-Broad region group: nationality 1	Describes the nationality of the employee in regional level
-Last hire date: Describes the last hire date of the employee
-Years since last hire: Represents the number of years since last hire of the employee
-Rand: generates random number for each entry in the dataset
+- Employee ID: Represents the unique number of the employee in the dataset
+- Gender: Describes the gender of the employee
+- Job Level after FY20 promotions: Describes the job level of the employee after being promoted in FY20
+- New hire FY20?: Describes if the employee is a new hire in FY20
+- FY20 Performance Rating: Represents the performance rating of the employee in FY20
+- Promotion in FY21?: Describes if the employee is being promoted in FY21
+- In base group for Promotion FY21: Describes if the employee is being selected for promoted in FY21
+- Target hire balance	Describes the target hire balance of the employee
+- FY20 leaver?: Describes if the employee is a leaver in FY20
+- In base group for turnover FY20: Describes if the employee is in a group for turnover in FY20
+- Department @01.07.2020: Describes the department each employee belongs to as at January 7, 2020
+- Leaver FY: Describes if the employee is a leaver in a FY
+- Job Level after FY21 promotions: Describes the job level of the employee after being promoted in FY21
+- Last Department in FY20: Describes the last department each employee belongs in FY20
+- FTE group: Describes if the employee belongs to a FTE group
+- Time type: Describes the contract type employee
+- Department & JL group PRA status: Describes the department and JL group PRA status of the employee
+- Department & JL group for PRA: Describes the department and JL group PRA of the employee
+- Job Level group PRA status: Describes the job level group PRA status of the employee
+- Job Level group for PRA: Describes the job level group PRA of the employee
+- Time in Job Level @01.07.2020: Describes the time in job level of the employee
+- Job Level before FY20 promotions: Describes the job level employee before being promoted in FY20
+- Promotion in FY20?: Describes if the employee is being promoted in FY20
+- FY19 Performance Rating: Describes the performance rating of the employee in FY19
+- Age group: Describes the age group of the employee
+- Age @01.07.2020: Represents the age of the employee as at January 07, 2020
+- Nationality 1: Describes the nationality of the employee in state level
+- Region group: nationality 1	Describes the nationality of the employee in country level
+- Broad region group: nationality 1	Describes the nationality of the employee in regional level
+- Last hire date: Describes the last hire date of the employee
+- Years since last hire: Represents the number of years since last hire of the employee
+- Rand: generates random number for each entry in the dataset
 
 ## Data Cleaning
 
@@ -71,13 +71,13 @@ Rand: generates random number for each entry in the dataset
 
 Measures used in  all visualization are:
 
-- # Avg Men Rating = `CALCULATE(AVERAGE('Pharma Group AG'[FY20 Performance Rating]),FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Male"))`
+- #Avg Men Rating = `CALCULATE(AVERAGE('Pharma Group AG'[FY20 Performance Rating]),FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Male"))`
 
-- # female = `CALCULATE(DISTINCTCOUNT('Pharma Group AG'[Employee ID]), FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Female"))`
+- #female = `CALCULATE(DISTINCTCOUNT('Pharma Group AG'[Employee ID]), FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Female"))`
 
-- # male = `CALCULATE(DISTINCTCOUNT('Pharma Group AG'[Employee ID]), FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Male"))`
+- #male = `CALCULATE(DISTINCTCOUNT('Pharma Group AG'[Employee ID]), FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Male"))`
 
-- # Promoted FY20 = `CALCULATE(COUNT('Pharma Group AG'[Employee ID]),'Pharma Group AG'[Promotion in FY20?]="Y")+CALCULATE(COUNT('Pharma Group AG'[Promotion in FY21?]),'Pharma Group AG'[Promotion in FY21?]="Yes")`
+- #Promoted FY20 = `CALCULATE(COUNT('Pharma Group AG'[Employee ID]),'Pharma Group AG'[Promotion in FY20?]="Y")+CALCULATE(COUNT('Pharma Group AG'[Promotion in FY21?]),'Pharma Group AG'[Promotion in FY21?]="Yes")`
 
 - #Avg Female Rating = `CALCULATE(AVERAGE('Pharma Group AG'[FY20 Performance Rating]),FILTER('Pharma Group AG', 'Pharma Group AG'[Gender] = "Female"))`
 
@@ -107,7 +107,6 @@ As per the visualizations, it has been deduced that :
 - 59% of hires were male
 - 2.41 is the average rating of men
 - 2.42 is the average rating of women
-- In age group 30–39, the total number of employees within this range totals 115 while the females total 59.
 - Also, it seems that more male employees in are promoted to higher-level job profiles than females.
 - The higher turnover percentage is among female employees.
 
