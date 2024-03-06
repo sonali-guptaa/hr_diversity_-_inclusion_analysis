@@ -96,6 +96,7 @@ Dashboard created using the calculated measures in Microsoft Power BI Desktop:
 
 ![1](https://github.com/sonali-guptaa/hr_diversity_-_inclusion_analysis/assets/151986702/8b57dfe3-3abd-4e3f-bc12-016116dad298)
 
+
 ![2](https://github.com/sonali-guptaa/hr_diversity_-_inclusion_analysis/assets/151986702/4947d885-a9e3-4489-82c0-e0b728f001e1)
 
 ## Insights:
